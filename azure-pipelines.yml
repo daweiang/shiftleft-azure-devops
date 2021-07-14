@@ -16,11 +16,11 @@ jobs:
   - task: CmdLine@2
     env:
       #Map secret variables to environment variables
-      CHKP_CLOUDGUARD_ID: $(CHKP_CLOUDGUARD_ID)
-      CHKP_CLOUDGUARD_SECRET: $(CHKP_CLOUDGUARD_SECRET)
+      CHKP_CLOUDGUARD_ID: ad9c03fe-d1e1-47dc-94e0-460a25fa4480
+      CHKP_CLOUDGUARD_SECRET: qwtwe4ow8ardcdw49mh4ecaq
     inputs:
       script: |
-        git clone https://github.com/chkp-rolandop/demo-app
+        git clone https://github.com/luykes/demo-app
         ./shiftleft code-scan -t 900 -s ./demo-app
     displayName: Running Source Code scan
 
@@ -43,8 +43,8 @@ jobs:
   - task: CmdLine@2
     env:
       #Need to map secret variable to environment variables
-      CHKP_CLOUDGUARD_ID: $(CHKP_CLOUDGUARD_ID)
-      CHKP_CLOUDGUARD_SECRET: $(CHKP_CLOUDGUARD_SECRET)
+      CHKP_CLOUDGUARD_ID: ad9c03fe-d1e1-47dc-94e0-460a25fa4480
+      CHKP_CLOUDGUARD_SECRET: qwtwe4ow8ardcdw49mh4ecaq
     inputs:
       script: |
         git clone https://github.com/chkp-rolandop/demo-app
@@ -67,8 +67,8 @@ jobs:
   - task: CmdLine@2
     env:
     #Map secret variables to environment variables
-      CHKP_CLOUDGUARD_ID: $(CHKP_CLOUDGUARD_ID)
-      CHKP_CLOUDGUARD_SECRET: $(CHKP_CLOUDGUARD_SECRET)
+      CHKP_CLOUDGUARD_ID: ad9c03fe-d1e1-47dc-94e0-460a25fa4480
+      CHKP_CLOUDGUARD_SECRET: qwtwe4ow8ardcdw49mh4ecaq
     inputs:
       script: |
         git clone https://github.com/chkp-rolandop/cloudguard-iac-noncompliant-terraform/
@@ -82,8 +82,8 @@ jobs:
   - task: CmdLine@2
     env:
       #Map secret variables to environment variables
-      CHKP_CLOUDGUARD_ID: $(CHKP_CLOUDGUARD_ID)
-      CHKP_CLOUDGUARD_SECRET: $(CHKP_CLOUDGUARD_SECRET)
+      CHKP_CLOUDGUARD_ID: ad9c03fe-d1e1-47dc-94e0-460a25fa4480
+      CHKP_CLOUDGUARD_SECRET: qwtwe4ow8ardcdw49mh4ecaq
     inputs:
       script: |
         git clone https://github.com/cr0hn/vulnerable-node
