@@ -16,8 +16,8 @@ jobs:
   - task: CmdLine@2
     env:
       #Map secret variables to environment variables
-      CHKP_CLOUDGUARD_ID: ad9c03fe-d1e1-47dc-94e0-460a25fa4480
-      CHKP_CLOUDGUARD_SECRET: qwtwe4ow8ardcdw49mh4ecaq
+      CHKP_CLOUDGUARD_ID: $(CHKP_CLOUDGUARD_ID)
+      CHKP_CLOUDGUARD_SECRET: $(CHKP_CLOUDGUARD_SECRET)
     inputs:
       script: |
         git clone https://github.com/luykes/demo-app
@@ -43,13 +43,13 @@ jobs:
   - task: CmdLine@2
     env:
       #Need to map secret variable to environment variables
-      CHKP_CLOUDGUARD_ID: ad9c03fe-d1e1-47dc-94e0-460a25fa4480
-      CHKP_CLOUDGUARD_SECRET: qwtwe4ow8ardcdw49mh4ecaq
+      CHKP_CLOUDGUARD_ID: $(CHKP_CLOUDGUARD_ID)
+      CHKP_CLOUDGUARD_SECRET: $(CHKP_CLOUDGUARD_SECRET)
     inputs:
       script: |
-        git clone https://github.com/chkp-rolandop/demo-app
-        docker build -t chkp-rolandop/demo-app ./demo-app/
-        docker save -o demo-app.tar chkp-rolandop/demo-app
+        git clone https://github.com/luykes/demo-app
+        docker build -t luykes/demo-app ./demo-app/
+        docker save -o demo-app.tar luykes/demo-app
         ./shiftleft image-scan -i demo-app.tar
     displayName: Running Container Image scan
 
@@ -67,12 +67,13 @@ jobs:
   - task: CmdLine@2
     env:
     #Map secret variables to environment variables
-      CHKP_CLOUDGUARD_ID: ad9c03fe-d1e1-47dc-94e0-460a25fa4480
-      CHKP_CLOUDGUARD_SECRET: qwtwe4ow8ardcdw49mh4ecaq
+      CHKP_CLOUDGUARD_ID: $(CHKP_CLOUDGUARD_ID)
+      CHKP_CLOUDGUARD_SECRET: $(CHKP_CLOUDGUARD_SECRET)
     inputs:
       script: |
-        git clone https://github.com/chkp-rolandop/cloudguard-iac-noncompliant-terraform/
-        ./shiftleft iac-assessment -p ./cloudguard-iac-noncompliant-terraform/aws/ -r -68
+        git clone https://github.com/luykes/cloudguard-iac-noncompliant-terraform
+        #./shiftleft iac-assessment -p ./cloudguard-iac-noncompliant-terraform/aws/ -r -64
+        ./shiftleft iac-assessment -p ./cloudguard-iac-noncompliant-terraform/azure/ -r -68
     displayName: Running Terraform Assessment
 
 - job: SourceCodeScanningOnWindows
@@ -82,8 +83,8 @@ jobs:
   - task: CmdLine@2
     env:
       #Map secret variables to environment variables
-      CHKP_CLOUDGUARD_ID: ad9c03fe-d1e1-47dc-94e0-460a25fa4480
-      CHKP_CLOUDGUARD_SECRET: qwtwe4ow8ardcdw49mh4ecaq
+      CHKP_CLOUDGUARD_ID: $(CHKP_CLOUDGUARD_ID)
+      CHKP_CLOUDGUARD_SECRET: $(CHKP_CLOUDGUARD_SECRET)
     inputs:
       script: |
         git clone https://github.com/cr0hn/vulnerable-node
