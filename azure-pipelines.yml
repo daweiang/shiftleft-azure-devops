@@ -22,7 +22,7 @@ jobs:
     inputs:
       script: |
         git clone https://github.com/luykes/demo-app
-        ./shiftleft code-scan -t 900 -e b9b6157c-2860-4d7a-8e66-ffcd5a589057 -s ./demo-app 
+        ./shiftleft code-scan -t 900 -s ./demo-app 
     displayName: Running Source Code scan
 
 
@@ -52,7 +52,7 @@ jobs:
         git clone https://github.com/chkp-rolandop/demo-app
         docker build -t chkp-rolandop/demo-app ./demo-app/
         docker save -o demo-app.tar chkp-rolandop/demo-app
-        ./shiftleft image-scan -e b9b6157c-2860-4d7a-8e66-ffcd5a589057 -i demo-app.tar
+        ./shiftleft image-scan -r 2002 -e b9b6157c-2860-4d7a-8e66-ffcd5a589057 -i demo-app.tar
     displayName: Running Container Image scan
 
 - job: TerraformScan
