@@ -45,6 +45,7 @@ jobs:
       #Need to map secret variable to environment variables
       CHKP_CLOUDGUARD_ID: $(CHKP_CLOUDGUARD_ID)
       CHKP_CLOUDGUARD_SECRET: $(CHKP_CLOUDGUARD_SECRET)
+      export SHIFTLEFT_REGION=ap2
     inputs:
       script: |
         git clone https://github.com/chkp-rolandop/demo-app
