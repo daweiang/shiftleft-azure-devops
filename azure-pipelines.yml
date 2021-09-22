@@ -22,7 +22,7 @@ jobs:
     inputs:
       script: |
         git clone https://github.com/luykes/demo-app
-        ./shiftleft code-scan -t 900 -s ./demo-app
+        ./shiftleft code-scan -t 900 -s ./demo-app -e b9b6157c-2860-4d7a-8e66-ffcd5a589057
     displayName: Running Source Code scan
 
 
@@ -75,8 +75,8 @@ jobs:
     inputs:
       script: |
         git clone https://github.com/luykes/cloudguard-iac-noncompliant-terraform
-        ./shiftleft iac-assessment -p ./cloudguard-iac-noncompliant-terraform/aws/ -r -64 -e 41d78c84-7229-4b4f-97cb-ea4a47a9cf2c
-        ./shiftleft iac-assessment -p ./cloudguard-iac-noncompliant-terraform/azure/ -r -68 -e 41d78c84-7229-4b4f-97cb-ea4a47a9cf2c
+        ./shiftleft iac-assessment -p ./cloudguard-iac-noncompliant-terraform/aws/ -r -64 -e b9b6157c-2860-4d7a-8e66-ffcd5a589057
+        ./shiftleft iac-assessment -p ./cloudguard-iac-noncompliant-terraform/azure/ -r -68 -e b9b6157c-2860-4d7a-8e66-ffcd5a589057
     displayName: Running Terraform Assessment
 
 - job: SourceCodeScanningOnWindows
