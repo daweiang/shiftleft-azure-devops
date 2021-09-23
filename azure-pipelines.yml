@@ -52,7 +52,7 @@ jobs:
         git clone https://github.com/chkp-rolandop/demo-app
         docker build -t chkp-rolandop/demo-app ./demo-app/
         docker save -o demo-app.tar chkp-rolandop/demo-app
-        ./shiftleft image-scan -r 2002 -e b9b6157c-2860-4d7a-8e66-ffcd5a589057 -i demo-app.tar
+        ./shiftleft image-scan -r 2000 -e b9b6157c-2860-4d7a-8e66-ffcd5a589057 -i demo-app.tar
     displayName: Running Container Image scan
 
 - job: TerraformScan
