@@ -22,7 +22,7 @@ jobs:
     inputs:
       script: |
         git clone https://github.com/luykes/demo-app
-        ./shiftleft code-scan -r 2003 -e b9b6157c-2860-4d7a-8e66-ffcd5a589057 -t 900 -s ./demo-app 
+        ./shiftleft code-scan -t 900 -s ./demo-app 
     displayName: Running Source Code scan
 
 
@@ -52,7 +52,7 @@ jobs:
         git clone https://github.com/chkp-rolandop/demo-app
         docker build -t chkp-rolandop/demo-app ./demo-app/
         docker save -o demo-app.tar chkp-rolandop/demo-app
-        ./shiftleft image-scan -r 2000 -e b9b6157c-2860-4d7a-8e66-ffcd5a589057 -i demo-app.tar
+        ./shiftleft image-scan  -i demo-app.tar
     displayName: Running Container Image scan
 
 - job: TerraformScan
@@ -93,5 +93,5 @@ jobs:
       script: |
         git clone https://github.com/cr0hn/vulnerable-node
         curl -G https://shiftleft-prod.s3.amazonaws.com/blades/shiftleft/bin/windows/amd64/0.0.24/shiftleft.exe -o shiftleft.exe
-        shiftleft.exe code-scan -r 221 -e b9b6157c-2860-4d7a-8e66-ffcd5a589057 -s ./vulnerable-node
+        shiftleft.exe code-scan -s ./vulnerable-node
     displayName: Running Source Code scan on Windows Agent
