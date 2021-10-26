@@ -22,7 +22,7 @@ jobs:
     inputs:
       script: |
         git clone https://github.com/luykes/demo-app
-        ./shiftleft code-scan -r 221 -e b9b6157c-2860-4d7a-8e66-ffcd5a589057 -t 900 -s ./demo-app 
+        ./shiftleft code-scan -r 2003 -e b9b6157c-2860-4d7a-8e66-ffcd5a589057 -t 900 -s ./demo-app 
     displayName: Running Source Code scan
 
 
